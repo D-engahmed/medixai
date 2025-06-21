@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: medixai-api-service
+  namespace: medixai
+  labels:
+    app: medixai-api
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8000"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+      name: http
+  selector:
+    app: medixai-api

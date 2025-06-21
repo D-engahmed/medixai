@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: medixai-config
+  namespace: medixai
+data:
+  ENVIRONMENT: "production"
+  POSTGRES_HOST: "postgres-service"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "medixai"
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
+  ELASTICSEARCH_HOST: "elasticsearch-service"
+  ELASTICSEARCH_PORT: "9200"
+  API_V1_PREFIX: "/api/v1"
+  CORS_ORIGINS: "https://medixai.com,https://api.medixai.com"
+  LOG_LEVEL: "INFO"
+  PROMETHEUS_METRICS_PATH: "/metrics"
+  HEALTH_CHECK_PATH: "/health"
+  MAX_CONNECTIONS_COUNT: "100"
+  MIN_CONNECTIONS_COUNT: "10"
+  CHAT_MODEL_ENDPOINT: "http://chat-model-service:8000"
+  GEO_SERVICE_URL: "http://geo-service:8000"
+  NOTIFICATION_SERVICE_URL: "http://notification-service:8000"
